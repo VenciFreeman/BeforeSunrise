@@ -5,7 +5,7 @@
 
 ### Preview
 
-![Preview](https://github.com/VenciFreeman/BeforeSunrise/blob/master/pic/preview.jpg)
+![Preview](https://github.com/VenciFreeman/BeforeSunrise/tree/master/pic/preview.jpg)
 
 ## Install
 
