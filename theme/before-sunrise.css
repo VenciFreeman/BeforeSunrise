@@ -5,7 +5,7 @@
  */
 
 
-@import "sunrise/codeblock.dark.css";
+@import "before-sunrise/codeblock.dark.css";
 
 :root {
     --body-bg-color: rgb(45, 45, 45); /* Background Color */
@@ -39,28 +39,28 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: normal;
-    src: local('Open Sans Regular'),url('./sunrise/400.woff') format('woff')
+    src: local('Open Sans Regular'),url('./before-sunrise/400.woff') format('woff')
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: normal;
-    src: local('Open Sans Italic'),url('./sunrise/400i.woff') format('woff')
+    src: local('Open Sans Italic'),url('./before-sunrise/400i.woff') format('woff')
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
-    src: local('Open Sans Bold'),url('./sunrise/700.woff') format('woff')
+    src: local('Open Sans Bold'),url('./before-sunrise/700.woff') format('woff')
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: bold;
-    src: local('Open Sans Bold Italic'),url('./sunrise/700i.woff') format('woff')
+    src: local('Open Sans Bold Italic'),url('./before-sunrise/700i.woff') format('woff')
 }
 
 html {
