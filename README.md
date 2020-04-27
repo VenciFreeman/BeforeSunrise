@@ -1,11 +1,14 @@
 # Before Sunrise
+
+ <img src="https://img.shields.io/badge/For-Typora-red.svg" alt="Generic badge"  /><img src="https://img.shields.io/badge/version-1.0-green.svg" alt="Generic badge"  /><img src="https://img.shields.io/badge/license-GNU_General_Public_License-blue.svg" alt="Generic badge"/>
+
 > This is a custom Typora theme. Borrowed codes from default `github` theme and open source `github-dark` theme. Thanks a lot.
 
 ## Feature
 
 ### Preview
 
-![Preview](https://github.com/VenciFreeman/BeforeSunrise/tree/master/pic/preview.jpg)
+![Preview]( https://github.com/VenciFreeman/BeforeSunrise/blob/master/pic/preview.jpg )
 
 ## Install
 
