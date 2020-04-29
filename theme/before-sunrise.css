@@ -6,25 +6,26 @@
 
 
 @import "before-sunrise/codeblock.dark.css";
+@import 'before-sunrise/mermaid.dark.css';
 
 :root {
-    --body-bg-color: rgb(45, 45, 45); /* Background Color */
-    --body-primary-color: rgb(255, 255, 255);  /* Text color */
+    --body-bg-color: rgb(45, 45, 45);           /* Background Color */
+    --body-primary-color: rgb(248, 248, 248);   /* Text color */
     --sidebar-bg-color: #262a30;
     --sidebar-border-color: #1a1a1a;
-    --sidebar-primary-color: rgb(177, 177, 177);
+    --sidebar-primary-color: rgb(197, 197, 197);
     --heading-color: rgb(255, 119, 119);
     --footer-bg-color: #5173a5;
     --footer-color: rgb(24, 142, 179);
     --control-text-color: #dfe9a5;
-    --control-text-color: rgb(241, 185, 237);
+    --control-text-color: rgb(114, 51, 110);
     --hover-bg-color: red;
-    --text-color: #ffffff;  /* Setting page text */
-    --active-file-bg-color: #089dca;  /* Setting bar color */
+    --text-color: #eeeeee;                      /* Setting page text */
+    --active-file-bg-color: #089dca;            /* Setting bar color */
     --active-file-border-color: #6b440d;
-    --bg-color: #555555;  /* Setting window background color */
-    --item-hover-bg-color: #2d2d2d;
-    --item-hover-text-color: #ffa633;
+    --bg-color: #555555;                        /* Setting window background color */
+    --item-hover-bg-color: #00e1ff;             /* Right-click bar focus background color*/
+    --item-hover-text-color: #ff0000;           /* Right-click bar focus text color*/
     --rawblock-edit-panel-bd: #333;
 }
 
