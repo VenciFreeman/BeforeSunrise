@@ -2,7 +2,7 @@
 
  <img src="https://img.shields.io/badge/For-Typora-red.svg" alt="Generic badge"  /><img src="https://img.shields.io/badge/version-1.0-green.svg" alt="Generic badge"  /><img src="https://img.shields.io/badge/license-GNU_General_Public_License-blue.svg" alt="Generic badge"/>
 
-> This is a custom Typora theme. Borrowed codes from the default `github` theme and open source `github-dark` theme. Thanks a lot.
+> This is a custom Typora theme. It incorporates code from the default `github` theme and open-source `github-dark` theme.
 
 ## Feature
 
@@ -12,15 +12,15 @@
 
 ## Installation
 
-- Download this repo;
-- Open the Theme Folder from `Preference Panel` → `Appearance` section;
-- Copy  `before-sunrise/` folder and `before-sunrise.css` file under `theme/`, into the newly opened folder, a.k.a. Typora theme folder, maybe `User/AppData/Roaming/Typora/themes`;
-- Restart typora, then select it from `Themes` menu.
+- Download this repoditory;
+- Open the Theme Folder from the `Preference Panel` → `Appearance` section;
+- Copy  the `before-sunrise/` folder and `before-sunrise.css` file into the `theme/` folder, typically located at `User/AppData/Roaming/Typora/themes`;
+- Restart Typora, then select the new theme from the `Themes` menu.
 
 ## Modification
 
-- It's an open-source repo, so you can modify the code yourself;
-- Refer [Write Custom Theme for Typora]( http://theme.typora.io/doc/Write-Custom-Theme/ ) to learn how to write css file for Typora.
+- This is an open-source repository, so you can modify the code yourself;
+- Refer to [Write Custom Theme for Typora]( http://theme.typora.io/doc/Write-Custom-Theme/ ) to learn how to create and customize css files for Typora.
 
 ## About Typora
 
