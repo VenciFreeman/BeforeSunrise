@@ -1,99 +1,127 @@
-/* @VenciFreeman, copyright 2020-2022. 
+/* @VenciFreeman
  * E-mail: vencifreeman@outlook.com 
  * Borrowed codes from default github theme and open source github-dark. Only for personal usage.
+ *
+ * =============================
+ * Typora Theme Customization Map
+ * =============================
+ * This file is organized so you can quickly find and adjust common visual settings:
+ *
+ * 1) Global colors (background/text/sidebar/footer):
+ *    - First and second :root blocks (CSS variables)
+ *
+ * 2) Base typography and page canvas:
+ *    - html (base font-size)
+ *    - body (font family, default text color, background)
+ *    - #write (content width + page margins/padding)
+ *
+ * 3) Heading levels (H1~H6):
+ *    - h1~h6 shared rule: common spacing/weight
+ *    - individual h1/h2/h3/h4/h5/h6 rules: per-level font-size, color, separators
+ *
+ * 4) Paragraph/list spacing:
+ *    - p/blockquote/ul/ol/dl/table margin
+ *    - ul/ol padding-left
+ *
+ * 5) Block-level widgets:
+ *    - blockquote (quote border/text)
+ *    - table (line colors, alternating row colors)
+ *    - code/inline code/fences (font, border, background)
+ *
+ * 6) Typora UI surfaces:
+ *    - sidebar, quick-open, modal, footer, focus mode
+ *
+ * -----------------------------
+ * How to customize safely
+ * -----------------------------
+ * - Prefer changing CSS variables first (in :root) to keep style consistent.
+ * - Use relative units (em/rem) for scalable typography.
+ * - For heading sizes, edit only h1~h6 font-size values below.
+ * - For content margins and printable area, edit #write max-width and padding.
+ * - For overall font color/background, edit --body-primary-color and --body-bg-color.
+ * - Keep a backup copy before major edits, then reload Typora theme to verify.
  */
 
 
- @import "before-sunrise/codeblock.dark.css";
- @import 'before-sunrise/mermaid.dark.css';
+@import "before-sunrise/codeblock.dark.css";
+@import 'before-sunrise/mermaid.dark.css';
+
+:root {
+    --mono-bg: #272822;         /* Carbon Black */
+    --mono-fg: #f8f8f2;         /* Porcelain */
+    --mono-gutter: #1e1f1c;     /* Carbon Black */
+    --mono-comment: #75715e;    /* Dim Grey */
+    --mono-select: #49483e;     /* Shadow Grey */
+    --mono-pink: #f92672;       /* Neon Pink */
+    --mono-orange: #fd971f;     /* Deep Saffron */
+    --mono-yellow: #e6db74;     /* Pale Amber */
+    --mono-green: #a6e22e;      /* Yellow Green */
+    --mono-cyan: #66d9ef;       /* Sky Blue */
+    --mono-purple: #ae81ff;     /* Soft Periwinkle */
+
+    --body-bg-color: var(--mono-bg);                    /* Background color */
+    --body-primary-color: var(--mono-fg);               /* Text color */
+    --sidebar-bg-color: var(--mono-gutter);             /* Sidebar color */
+    --sidebar-border-color: var(--mono-bg);             /* Sidebar borderline color */
+    --sidebar-primary-color: var(--mono-cyan);          /* Siderbar primary bar color */
+    --heading-color: var(--mono-fg);                    /* Heading text color */
+    --footer-bg-color: var(--mono-gutter);              /* Footer background color */
+    --footer-color: var(--mono-fg);                     /* Footer text color */
+    --control-text-color: var(--mono-fg);               /* UI control text color */
+    --hover-bg-color: var(--mono-gutter);               /* Hover state background color */
+    --text-color: var(--mono-fg);                       /* Setting page text */
+    --active-file-bg-color: var(--mono-gutter);         /* Setting bar color */
+    --active-file-border-color: var(--mono-comment);    /* Active file border color */
+    --bg-color: var(--mono-gutter);                     /* Setting window background color */
+    --item-hover-bg-color: var(--mono-gutter);          /* Right-click bar focus background color*/
+    --item-hover-text-color: var(--mono-fg);            /* Right-click bar focus text color*/
+    --rawblock-edit-panel-bd: var(--mono-comment);      /* Raw block edit panel border color */
+}
  
- :root {
-     --body-bg-color: rgb(39, 40, 34);             /* Background color. Change to the same with VS Code theme Monokai */
-     --body-primary-color: rgb(255, 255, 255);     /* Text color */
-     --sidebar-bg-color: rgb(39, 40, 34);          /* Sidebar color */
-     --sidebar-border-color: rgb(39, 40, 34);      /* Sidebar borderline color */
-     --sidebar-primary-color: rgb(255, 255, 255);  /* Siderbar primary bar color */
-     --heading-color: rgb(255, 255, 255);
-     --footer-bg-color: rgb(52, 53, 47);
-     --footer-color: rgb(255, 255, 255);
-     --control-text-color: rgb(255, 255, 255);
-     --hover-bg-color: rgb(39, 40, 34);
-     --text-color: rgb(255, 255, 255);             /* Setting page text */
-     --active-file-bg-color: rgb(52, 53, 47);      /* Setting bar color */
-     --active-file-border-color: rgb(52, 53, 47);
-     --bg-color: rgb(39, 40, 34);                  /* Setting window background color */
-     --item-hover-bg-color: rgb(39, 40, 34);       /* Right-click bar focus background color*/
-     --item-hover-text-color: rgb(255, 255, 255);  /* Right-click bar focus text color*/
-     --rawblock-edit-panel-bd: rgb(39, 40, 34);
- }
+ /*
+  * Code-related palette variables.
+  * Change these when you want code blocks and inline code to use different contrast.
+  */
+:root {
+    --code-border-color: var(--mono-cyan);      /* Code block borderline color */
+    --code-bg-color: var(--mono-gutter);        /* Code block background color */
+}
  
- :root {
-     --code-border-color: rgb(255, 255, 255);      /* Code block borderline color */
-     --code-bg-color: rgb(39, 40, 34);             /* Code block background color */
- }
- 
- @include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
- 
- @font-face {
-     font-family: 'Open Sans';
-     font-style: normal;
-     font-weight: normal;
-     src: local('Open Sans Regular'),url('./before-sunrise/400.woff') format('woff')
- }
- 
- @font-face {
-     font-family: 'Open Sans';
-     font-style: italic;
-     font-weight: normal;
-     src: local('Open Sans Italic'),url('./before-sunrise/400i.woff') format('woff')
- }
- 
- @font-face {
-     font-family: 'Open Sans';
-     font-style: normal;
-     font-weight: bold;
-     src: local('Open Sans Bold'),url('./before-sunrise/700.woff') format('woff')
- }
- 
- @font-face {
-     font-family: 'Open Sans';
-     font-style: italic;
-     font-weight: bold;
-     src: local('Open Sans Bold Italic'),url('./before-sunrise/700i.woff') format('woff')
- }
- 
- html {
-     font-size: 16px;
- }
- 
- body {
-     font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-     color: rgb(52, 53, 47));
-     background: var(--body-bg-color);
-     color: var(--body-primary-color);
-     line-height: 1.6;
- }
- 
- #write{
-     max-width: 860px;
-       margin: 0 auto;
-       padding: 20px 30px 40px 30px;
-     padding-top: 20px;
-     padding-bottom: 100px;
- }
+html {
+    /* Base font size for rem/em-based scaling across the theme. */
+    font-size: 15px;
+}
+
+body {
+    /* Main reading font stack for document content. */
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: var(--mono-bg);              /* Overall editor page background and default text color. */
+    background: var(--body-bg-color);
+    color: var(--body-primary-color);   /* Vertical rhythm for paragraph readability. */
+    line-height: 1.6;
+}
+
+#write{
+    /* Main content container width. */
+    max-width: 860px;               /* Horizontal centering and page inner spacing. */
+    margin: 0 auto;
+    padding: 20px 30px 40px 30px;   /* Top/bottom editing comfort space inside document area. */
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
  #write > ul:first-child,
  #write > ol:first-child{
-     margin-top: 30px;
+    margin-top: 30px;
  }
  
  body > *:first-child {
-     margin-top: 0 !important;
+    margin-top: 0 !important;
  }
  body > *:last-child {
-     margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
  }
  a {
-     color: rgb(165, 165, 165);
+    color: var(--mono-cyan);
  }
  h1,
  h2,
@@ -101,13 +129,14 @@
  h4,
  h5,
  h6 {
-     position: relative;
-     margin-top: 1rem;
-     margin-bottom: 1rem;
-     font-weight: bold;
-     line-height: 1.4;
-     cursor: text;
-     color: var(--heading-color);
+    position: relative;
+    /* Shared heading block spacing. Edit these for all heading levels at once. */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+    color: var(--heading-color);
  }
  h1:hover a.anchor,
  h2:hover a.anchor,
@@ -115,93 +144,100 @@
  h4:hover a.anchor,
  h5:hover a.anchor,
  h6:hover a.anchor {
-     text-decoration: none;
+    text-decoration: none;
  }
  h1 tt,
  h1 code {
-     font-size: inherit;
+    font-size: inherit;
  }
  h2 tt,
  h2 code {
-     font-size: inherit;
+    font-size: inherit;
  }
  h3 tt,
  h3 code {
-     font-size: inherit;
+    font-size: inherit;
  }
  h4 tt,
  h4 code {
-     font-size: inherit;
+    font-size: inherit;
  }
  h5 tt,
  h5 code {
-     font-size: inherit;
+    font-size: inherit;
  }
  h6 tt,
  h6 code {
-     font-size: inherit;
+    font-size: inherit;
  }
- h1 {  /* #1 header */
-     padding-bottom: .3em;
-     font-size: 2.5em;
-     color:rgb(255, 255, 255);
-     line-height: 1.2;
-     border-bottom: 1px solid rgb(255, 255, 255);  /* #1 header dividing line */
+h1 {
+    /* H1 style: size, color, and underline separator. */
+    padding-bottom: .3em;
+    font-size: 2.5em;
+    color: var(--mono-purple);
+    line-height: 1.2;
+    border-bottom: 1px solid var(--mono-comment);  /* #1 header dividing line */
  }
- h2 {  /* #2 header */
-     padding-bottom: .3em;
-     font-size: 2em;
-     color:rgb(225, 225, 225);
-     line-height: 1.225;
-     border-bottom: 1px solid rgb(52, 53, 47);  /* #2 header dividing line */
+h2 {
+    /* H2 style: slightly smaller than H1 with softer color. */
+    padding-bottom: .3em;
+    font-size: 2em;
+    color: var(--mono-cyan);
+    line-height: 1.225;
+    border-bottom: 1px solid var(--mono-gutter);  /* #2 header dividing line */
  }
- h3 {  /* #3 header */
-     font-size: 1.75em;
-     line-height: 1.43;
-     color:rgb(195, 195, 195);
+h3 {
+    /* H3 size/color tuning point. */
+    font-size: 1.8em;
+    line-height: 1.43;
+    color: var(--mono-green);
  }
- h4 {  /* #4 header */
-     font-size: 1.5em;
-     color:rgb(165, 165, 165);
+h4 {
+    /* H4 size/color tuning point. */
+    font-size: 1.45em;
+    color: var(--mono-yellow);
  }
- h5 {  /* #5 header */
-     font-size: 1.25em;
-     color:rgb(135, 135, 135);
+h5 {
+    /* H5 size/color tuning point. */
+    font-size: 1.2em;
+    color: var(--mono-orange);
  }
- h6 {  /* #6 header */
-     font-size: 1em;
-     color: rgb(105, 105, 105);
+h6 {
+    /* H6 size/color tuning point. */
+    font-size: 1.1em;
+    color: var(--mono-pink);
  }
  p,
  blockquote,
  ul,
  ol,
  dl,
- table{
-     margin: 0.8em 0;
+table{
+    /* Shared block margin for common text containers. */
+    margin: 0.8em 0;
  }
  li>ol,
  li>ul {
      margin: 0 0;
  }
  hr {
-     height: 4px;
-     padding: 0;
-     margin: 16px 0;
-     background-color: rgb(52, 53, 47);
-     border: 0 none;
-     overflow: hidden;
-     box-sizing: content-box;
-     border-bottom: 1px solid rgb(255, 255, 255);
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: var(--mono-gutter);
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-bottom: 1px solid var(--mono-comment);
  }
  
  body > h2:first-child {
-     margin-top: 0;
-     padding-top: 0;
+    margin-top: 0;
+    padding-top: 0;
  }
  body > h1:first-child {
-     margin-top: 0;
-     padding-top: 0;
+    margin-top: 0;
+    padding-top: 0;
  }
  body > h1:first-child + h2 {
      margin-top: 0;
@@ -211,8 +247,8 @@
  body > h4:first-child,
  body > h5:first-child,
  body > h6:first-child {
-     margin-top: 0;
-     padding-top: 0;
+    margin-top: 0;
+    padding-top: 0;
  }
  a:first-child h1,
  a:first-child h2,
@@ -220,8 +256,8 @@
  a:first-child h4,
  a:first-child h5,
  a:first-child h6 {
-     margin-top: 0;
-     padding-top: 0;
+    margin-top: 0;
+    padding-top: 0;
  }
  h1 p,
  h2 p,
@@ -229,255 +265,264 @@
  h4 p,
  h5 p,
  h6 p {
-     margin-top: 0;
+    margin-top: 0;
  }
  li p.first {
-     display: inline-block;
+    display: inline-block;
  }
  ul,
  ol {
-     padding-left: 30px;
+    /* List indentation depth. Increase/decrease for tighter/looser nesting feel. */
+    padding-left: 30px;
  }
  ul:first-child,
  ol:first-child {
-     margin-top: 0;
+    margin-top: 0;
  }
  ul:last-child,
  ol:last-child {
-     margin-bottom: 0;
+    margin-bottom: 0;
  }
 
  ::-moz-selection {
-     background: rgb(105, 105, 105);
-     color: rgb(225, 225, 225);
-     text-shadow: none;
+    background: var(--mono-select);
+    color: var(--mono-fg);
+    text-shadow: none;
  }
 
  *.in-text-selection,
  ::selection {
-     background: rgb(105, 105, 105);
-     color: rgb(225, 225, 225);
-     text-shadow: none;
+    background: var(--mono-select);
+    color: var(--mono-fg);
+    text-shadow: none;
  }
 
- blockquote {  /* Quote */
-     border-left: 4px solid rgb(195, 195, 195);  /* border color */
-     padding: 0 15px;
-     color: rgb(135, 135, 135);  /* text color */
+blockquote {
+    /* Quote block border + text color custom point. */
+    border-left: 4px solid var(--mono-orange);
+    padding: 0 15px;
+    color: var(--mono-comment);
  }
  blockquote blockquote {
-     padding-right: 0;
+    padding-right: 0;
  }
  table {
-     padding: 0;
-     word-break: initial;
+    /* Table base layout behavior. */
+    padding: 0;
+    word-break: initial;
  }
  table tr {
-     border-top: 1px solid rgb(255, 255, 255);
-     margin: 0;
-     padding: 0;
+    border-top: 1px solid var(--mono-comment);
+    margin: 0;
+    padding: 0;
  }
- table tr:nth-child(2n) {  /* line 2n background color */
-     background-color: rgb(39, 40, 34);
+ table tr:nth-child(2n) {
+    /* line 2n background color */
+    background-color:var(--mono-bg);
  }
  table tr th {
-     font-weight: bold;
-     border: 1px solid rgb(255, 255, 255);
-     border-bottom: 0;
-     text-align: left;
-     margin: 0;
-     padding: 6px 13px;
+    font-weight: bold;
+    border: 1px solid var(--mono-comment);
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
  }
  table tr td {
-     border: 1px solid rgb(255, 255, 255);
-     text-align: left;
-     margin: 0;
-     padding: 6px 13px;
+    border: 1px solid var(--mono-comment);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
  }
  table tr th:first-child,
  table tr td:first-child {
-     margin-top: 0;
+    margin-top: 0;
  }
  table tr th:last-child,
  table tr td:last-child {
-     margin-bottom: 0;
+    margin-bottom: 0;
  }
  
  .CodeMirror-gutters {
-     border-right: 1px solid rgb(255, 255, 255);
+     border-right: 1px solid var(--mono-gutter);
  }
  
  .md-fences,
  code,
  tt {
-     border: 1px solid var(--code-border-color);
-     background-color: var(--code-bg-color);
-     border-radius: 3px;
-     padding: 0;
-     font-family: Consolas, "Liberation Mono", Courier, monospace;
-     padding: 2px 4px 0px 4px;
-     font-size: 0.9em;
+    /* Inline code and fenced-code base style. */
+    border: 1px solid var(--code-border-color);
+    background-color: var(--code-bg-color);
+    border-radius: 3px;
+    padding: 0;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
  }
  
  .md-fences {
-     margin-bottom: 15px;
-     margin-top: 15px;
-     padding: 0.2em 1em;
-     padding-top: 8px;
-     padding-bottom: 6px;
+    /* Fenced code block outer spacing + inner padding. */
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 0.2em 1em;
+    padding-top: 8px;
+    padding-bottom: 6px;
  }
  .task-list{
-     padding-left: 0;
+    padding-left: 0;
  }
  
  .task-list-item {
-     padding-left:32px;
+    padding-left:32px;
  }
  
- .task-list-item input {
-   top: 0px;
-   left: 2px;
- }
+.task-list-item input {
+    top: 0px;
+    left: 2px;
+}
  
  @media screen and (min-width: 914px) {
  
  }
  @media print {
-     html {
-         font-size: 13px;
-     }
-     table,
-     pre {
-         page-break-inside: avoid;
-     }
-     pre {
-         word-wrap: break-word;
-     }
+    html {
+        /* Print-specific base text size. */
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
  }
  
  #write pre.md-meta-block {  /* YAML */
-     padding: 1rem;
-     font-size: 85%;
-     line-height: 1.45;
-     background-color: rgb(52, 53, 47);
-     border: 0;
-     border-radius: 3px;
-     color: rgb(195, 195, 195);
-     margin-top: 0 !important;
+    /* Front-matter (YAML) styling shown at top of documents. */
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: var(--mono-gutter);
+    border: 0;
+    border-radius: 3px;
+    color: var(--mono-yellow);
+    margin-top: 0 !important;
  }
  
  .mathjax-block>.code-tooltip {
-     bottom: .375rem;
+    bottom: .375rem;
  }
  
  .md-mathjax-midline {
-     background-color: rgb(52, 53, 47);
+    background-color: var(--mono-gutter);
  }
  
  #write>h3.md-focus:before{
-     left: -1.5625rem;
-     top: .375rem;
+    left: -1.5625rem;
+    top: .375rem;
  }
  #write>h4.md-focus:before{
-     left: -1.5625rem;
-     top: .285714286rem;
+    left: -1.5625rem;
+    top: .285714286rem;
  }
  #write>h5.md-focus:before{
-     left: -1.5625rem;
-     top: .285714286rem;
+    left: -1.5625rem;
+    top: .285714286rem;
  }
  #write>h6.md-focus:before{
-     left: -1.5625rem;
-     top: .285714286rem;
+    left: -1.5625rem;
+    top: .285714286rem;
  }
  .md-image>.md-meta {
-     border: 1px solid rgb(39, 40, 34);
-     border-radius: 3px;
-     font-family: Consolas, "Liberation Mono", Courier, monospace;
-     padding: 2px 4px 0px 4px;
-     font-size: 0.9em;
-     color: inherit;
+    border: 1px solid var(--mono-comment);
+    border-radius: 3px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
  }
  
  .md-tag{
-     color: rgb(39, 40, 34);
+    color: var(--mono-green);
  }
  
- .md-toc { 
-     margin-top:20px;
-     padding-bottom:20px;
- }
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
  
  .sidebar-tabs {
-     border-bottom: none;
+    border-bottom: none;
  }
  
  #typora-quick-open {
-     border: 1px solid rgb(255, 255, 255);
-     background-color: rgb(39, 40, 34);
+    border: 1px solid var(--mono-comment);
+    background-color: var(--mono-bg);
  }
  
  #typora-quick-open-item {
-     background-color: rgb(52, 53, 47);
-     border-color: rgb(255, 255, 255) rgb(225, 225, 225) rgb(195, 195, 195) rgb(165, 165, 165);
-     border-style: solid;
-     border-width: 1px;
+    background-color: var(--mono-gutter);
+    border-color: var(--mono-comment) var(--mono-fg) var(--mono-cyan) var(--mono-purple);
+    border-style: solid;
+    border-width: 1px;
  }
  
  #md-notification:before {
-     top: 10px;
+    top: 10px;
  }
  
  /** focus mode */
  .on-focus-mode blockquote {
-     border-left-color: rgb(39, 40, 34);
+    border-left-color: var(--mono-purple);
  }
  
  header, .context-menu, .megamenu-content, footer{
-     font-family: "Segoe UI", "Arial", sans-serif;
+    font-family: "Segoe UI", "Arial", sans-serif;
  }
  
  .file-node-content:hover .file-node-icon,
  .file-node-content:hover .file-node-open-state{
-     visibility: visible;
+    visibility: visible;
  }
  
  #typora-sidebar {
-     background-color: var(--sidebar-bg-color);
-     border-right:1px dashed var(--sidebar-border-color);
+    /* Typora left sidebar background and divider. */
+    background-color: var(--sidebar-bg-color);
+    border-right:1px dashed var(--sidebar-border-color);
  }
  
  .active-tab-files #info-panel-tab-file,
  .active-tab-files #info-panel-tab-file:hover,
  .active-tab-outline #info-panel-tab-outline,
  .active-tab-outline #info-panel-tab-outline:hover {
-     color: var(--sidebar-primary-color);
+    color: var(--sidebar-primary-color);
  }
  
  .modal-open .modal.fade.in {
-     background-color: rgb(39, 40, 34);
+    background-color: var(--mono-bg);
  }
  
  .modal-content input {
-     background-color: rgb(39, 40, 34);
-     color: white;
+    background-color: var(--mono-bg);
+    color: var(--mono-fg);
  }
  
  .modal-backdrop {
-     background-color: rgb(39, 40, 34);
+    background-color: var(--mono-bg);
  }
  
  #outline-btn:hover {
-     color: inherit;
+    color: inherit;
  }
  
  .md-lang {
-     color: rgb(52, 53, 47);
+    color: var(--mono-comment);
  }
  
  .MathJax_SVG:focus {
-     outline: none;
-     background-color: rgb(225, 225, 225);  /* color when focus */
+    outline: none;
+    background-color: var(--mono-select);
  }
  
  
@@ -488,22 +533,22 @@
  select,
  textarea,
  div.code-tooltip-content {
-     color: rgb(225, 225, 225);
-     border-color: rgb(225, 225, 225);
+    color: var(--mono-fg);
+    border-color: var(--mono-comment);
  }
  
  div.code-tooltip,
  .md-hover-tip .md-arrow:after {
-     background: rgb(52, 53, 47);
+    background: var(--mono-gutter);
  }
  
  .popover.bottom > .arrow:after {
-     border-bottom-color: rgb(52, 53, 47);
+    border-bottom-color: var(--mono-gutter);
  }
  
  
  footer {
-     color: var(--footer-color);
-     background-color: var(--footer-bg-color);
+    /* Bottom status/footer colors. */
+    color: var(--footer-color);
+    background-color: var(--footer-bg-color);
  }
- 
